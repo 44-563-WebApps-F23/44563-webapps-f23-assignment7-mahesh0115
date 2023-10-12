@@ -27,12 +27,12 @@
 }
 function startTime() {
     var initiate = Math.floor(Math.random() * 9) + 2;
-            for (let i = initiate; i >= 0; i--) {
+            for (let i = o; i <9; i++) {
                 setTimeout(function(i) {
                     return function() {
                         document.getElementById("counter").innerHTML = i;
                     };
-                }(i), (initiate - i) * 1000);
+                }(i), (8 - i) * 1000);
             }
             
 setTimeout(function() {

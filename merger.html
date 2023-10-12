@@ -73,7 +73,20 @@ e.className = "merger";
 let container = document.getElementById("target");
 container.insertBefore(e, container.firstChild);
 } 
-
+function swap()
+     {
+			let merger = document.getElementsByClassName("merger")
+			let i= Math.floor(Math.random() * merger.length)
+			let j = Math.floor(Math.random() * merger.length)
+			 let initial = document.getElementsByClassName("merger")[i]
+			 let final = document.getElementsByClassName("merger")[j]
+			if (merger.length > 1) {
+				let swap = initial.innerHTML
+				initial.innerHTML = final.innerHTML
+			 	final.innerHTML = swap
+			}
+		
+		}
 
 </script>
 </html>	
