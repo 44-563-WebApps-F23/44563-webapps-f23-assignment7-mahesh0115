@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html> <head> <title>
+    Building a Merger
+</title> <style>
+.flex-container {
+  display: flex;  flex-direction:row;
+  background-color: rgb(33, 31, 31);
+}
+
+.flex-container > div {  /*div children of the flex container*/
+background-color: #f1f1f1; 
+margin: 10px;  padding: 20px;  font-size: 30px;
+}
+.merger{
+border: 1px solid #c19292;
+        padding: 10px;
+        margin: 5px;
+}
+
+/* Responsive layout */
+@media (max-width: 600px) { 
+ .flex-container{
+     flex-direction:column;
+     background-color: rgb(225, 233, 124);
+  }
+}
+</style></head>
+
+
+
+<body>
+<h3> Mahesh Gudla builds a merger</h3>
+
+
+    <div class="flex-container" id="target">
+      <div class="merger">row item 1</div>   
+      <div class="merger">row item 2</div>  
+      <div class="merger">row item 3</div>  
+    </div>
+
+<p> Press the button to create an new element of type div and then add it to the container.
+    </p>
+    <lable for="inputElement">Enter something : </lable>
+    <input class="form-control" type="text" name="input" id="inputElement" value="">
+    <div class="container text-center"></div>
+    <button onclick="makeNewDiv()">Add end</button>
+    <button type="button" onclick="addFront()">Add front</button>
+    <button type="button" onclick="remove()">Remove</button>
+  
+
+</body>
+<script>
+function makeNewDiv(){
+    let v = document.getElementById("inputElement").value
+    let e = document.createElement("div")
+    e.innerHTML = v;
+    e.className = "merger";
+    
+    let container = document.getElementById('target')
+    container.appendChild(e)    
+}
+function remove() {
+let mergerItems = document.getElementsByClassName("merger");
+if (mergerItems.length > 0) {
+    mergerItems[Math.floor(mergerItems.length / 2)].remove();
+}
+}
+function addFront(){
+let v = document.getElementById("inputElement").value;
+let e = document.createElement("div")
+e.innerHTML = v;
+e.className = "merger";
+let container = document.getElementById("target");
+container.insertBefore(e, container.firstChild);
+} 
+
+
+</script>
+</html>	
